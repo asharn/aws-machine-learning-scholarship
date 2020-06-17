@@ -3,6 +3,8 @@ This repostory contains course work completed for phase-I and If selected then w
 
 ## Phase I
 
+[](phase-I/aws-mle-intro.jpg)
+
 ### Introduction of scholarship program course work that will explain different excercise that some some is going to learn about object oriented programming.
 
 - Object-oriented programming syntax
@@ -129,3 +131,61 @@ twine upload dist/*
 pip install distributions
 ```
 Check the uploaded one: https://pypi.org/project/general-gaussian-and-binomial-distributions/
+
+
+## AWS Composer
+
+#### AWS Composer and Generative AI
+
+AWS Deep Composer uses Generative AI, or specifically Generative Adversarial Networks (GANs), to generate music. GANs pit 2 networks, a generator and a discriminator, against each other to generate new content.
+
+The best way we’ve found to explain this is to use the metaphor of an orchestra and conductor. In this context, the generator is like the orchestra and the discriminator is like the conductor. The orchestra plays and generates the music. The conductor judges the music created by the orchestra and coaches the orchestra to improve for future iterations. So an orchestra, trains, practices, and tries to generate music, and then the conductor coaches them to produced more polished music.
+Orchestra and Conductor as a metaphor for GANS
+
+#### AWS DeepComposer Workflow
+
+- Use the AWS DeepComposer keyboard or play the virtual keyboard in the AWS DeepComposer console to input a melody.
+- Use a model in the AWS DeepComposer console to generate an original musical composition. You can choose from jazz, rock, pop, symphony or Jonathan Coulton pre-trained models or you can also build your own custom genre model in Amazon SageMaker.
+- Publish your tracks to SoundCloud or export MIDI files to your favorite Digital Audio Workstation (like Garage Band) and get even more creative.
+
+
+#### How AWS Deep Composor Works
+
+- Input melody captured on the AWS DeepComposer console
+- Console makes a backend call to AWS DeepComposer APIs that triggers an execution Lambda.
+- Book-keeping is recorded in Dynamo DB.
+- The execution Lambda performs an inference query to SageMaker which hosts the model and the training inference container.
+- The query is run on the Generative AI model.
+- The model generates a composition.
+- The generated composition is returned.
+- The user can hear the composition in the console.
+- The user can share the composition to SoundCloud.
+
+#### Generative AI
+
+Generative AI has been described as one of the most promising advances in AI in the past decade by the MIT Technology Review.
+
+Generative AI opens the door to an entire world of creative possibilities with practical applications emerging across industries, from turning sketches into images for accelerated product development, to improving computer-aided design of complex objects.
+
+For example, Glidewell Dental is training a generative adversarial network adept at constructing detailed 3D models from images. One network generates images and the second inspects those images. This results in an image that has even more anatomical detail than the original teeth they are replacing.
+Glidewell Dental is training GPU powered GANs to create dental crown models
+
+Generative AI enables computers to learn the underlying pattern associated with a provided input (image, music, or text), and then they can use that input to generate new content. Examples of Generative AI techniques include Generative Adversarial Networks (GANs), Variational Autoencoders, and Transformers.
+
+#### What are GANs?
+
+GANs, a generative AI technique, pit 2 networks against each other to generate new content. The algorithm consists of two competing networks: a **generator** and a **discriminator**.
+
+A **generator** is a convolutional neural network (CNN) that learns to create new data resembling the source data it was trained on.
+
+The discriminator is another convolutional neural network (CNN) that is trained to differentiate between real and synthetic data.
+
+The generator and the discriminator are trained in alternating cycles such that the generator learns to produce more and more realistic data while the discriminator iteratively gets better at learning to differentiate real data from the newly created data.
+
+#### Introduction to U-Net Architecture
+
+##### Training a machine learning model using a dataset of Bach compositions
+
+AWS DeepComposer uses GANs to create realistic accompaniment tracks. When you provide an input melody, such as twinkle-twinkle little star, using the keyboard U-Net will add three additional piano accompaniment tracks to create a new musical composition.
+
+The U-Net architecture uses a publicly available dataset of Bach’s compositions for training the GAN. In AWS DeepComposer, the generator network learns to produce realistic Bach-syle music while the discriminator uses real Bach music to differentiate between real music compositions and newly created ones
