@@ -3,7 +3,7 @@ This repostory contains course work completed for phase-I and If selected then w
 
 ## Phase I
 
-[](phase-I/aws-mle-intro.jpg)
+![](phase-I/aws-mle-intro.jpg)
 
 ### Introduction of scholarship program course work that will explain different excercise that some some is going to learn about object oriented programming.
 
